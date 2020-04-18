@@ -39,7 +39,7 @@ io.on('connection', (socket) => {
 	socket.on('disconnect', () => {
 		console.log(`[dscn] client disconnected : ${socket.name}(${socket.id})`);
 		if(socket.name){
-			io.sockets.in(socket.room).emit('disconnect', socket.name);
+			io.sockets.in(socket.room).emit('disconnect', null, socket.name);
 		}
 	});
 });
